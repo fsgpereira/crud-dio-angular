@@ -1,0 +1,30 @@
+<!-- interpolação -->
+<h1>{{text}}</h1>
+
+<!-- Property Biding -->
+<img [src]="imageUrl" [alt]="imageDesc">
+
+<!-- event Binding -->
+<button [attr.aria-label]="buttonText">{{buttonText}}</button>
+<input #input (keyup)="clicou(input.value)">
+
+<!-- Class Binding -->
+<h1 [class.textRed]="textRed">Class Binding</h1>
+
+<!-- Style Binding -->
+<button [attr.aria-label]="buttonText" [style.backgroundColor]="bgColor"
+    [style.font-size]="fontSize">{{buttonText}}</button>
+
+<img [src]="imageUrl" [alt]="imageDesc" [style.width.px]="widthImg">
+
+
+<!-- Two-Way Data Binding -->
+<input type="text" class="form-control" [(ngModel)]="textInput">
+<p class="text-default">{{textInput}}</p>
+
+<app-button [btntext]="'Enviar'" [btntype]="'btn-success'" (click)="destroyComponent()"></app-button>
+<app-button [btntext]="'Salvar'" [btntype]="'btn-warning'"></app-button>
+<app-button btntext="Clique" btntype="btn-danger" (click)="incrementa()"></app-button>
+<app-button btntext="Teste" btntype="btn-secondary"></app-button>
+
+<app-life-cycle [number]="number" *ngIf="!destroy"></app-life-cycle>
